@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+void rec(int nat, int n)
+{
+	if (nat / n != 0) rec(nat / n, n);
+	if (nat % n < 10) cout << nat% n;
+	else cout << char(nat % n - 10 + 'A');
+}
+int main()
+{
+	setlocale(LC_ALL, "RU");
+	int n, nat;
+	cout << "Введите число: "; 
+	cin >> nat; 
+	cout << "Введите систему счисления: ";
+	cin >> n;
+	cout << "Ответ: ";
+	rec(nat, n);
+	return 0;
+}
